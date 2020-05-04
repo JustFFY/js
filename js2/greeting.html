@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <input type="text" value="" id="name">
+        <hr>
+        Hello
+        <div id="msg"></div>
+        <script>
+            //document.addEventListener('load',function(){
+            //    textbox.value = localStorage.getItem("name")
+            //})
+            const textbox = document.querySelector('#name')
+            const msg = document.querySelector('#msg')
+            textbox.addEventListener('keyup',function(e){
+                msg.innerText = e.target.value
+                localStorage.setItem("name",e.target.value)
+            })
+            textbox.value = localStorage.getItem("name")
+        </script>
+    </body>
+</html>
